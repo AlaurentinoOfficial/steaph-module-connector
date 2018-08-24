@@ -9,9 +9,7 @@ DbConfig(
 
 console.log(new Date())
 
-function loop() {
+var loop = (delay) => {
     console.log("Hey there!");
-    setTimeout(() => {loop()}, 3000);
-}
-
-loop();
+    setTimeout(() => {loop(delay)}, delay);
+}; loop(3000)
