@@ -1,0 +1,13 @@
+version: "2"
+services:
+  thing_connector:
+    build: .
+    ports:
+    links:
+      - mongo
+  mongo:
+    image: mongo
+    volumes:
+      - /data/db:/data/db
+    ports:
+      - "27017:27017"

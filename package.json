@@ -1,0 +1,33 @@
+{
+  "name": "steaph",
+  "version": "2.1.0",
+  "description": "description",
+  "main": "dist/bin/www.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "babel ./src/ --out-dir ./dist && node dist/server.js",
+    "babelw": "babel --watch ./src/ --out-dir ./dist",
+    "docker": "babel ./src/ --out-dir ./dist && node dist/server.js --docker"
+  },
+  "keywords": [
+    "iot",
+    "connector",
+    "thing",
+    "steaph"
+  ],
+  "author": "Anderson Laurentino",
+  "license": "MIT",
+  "dependencies": {
+    "colors": "^1.3.0",
+    "mongoose": "^5.0.0-rc1",
+    "mongoose-relationship": "^0.1.5",
+    "mqtt": "^2.17.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-stage-2": "^6.22.0",
+    "babel-register": "^6.22.0"
+  }
+}
