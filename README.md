@@ -23,6 +23,7 @@ $ mongod
 * Start up Babel listener
 ```
 $ npm install
+$ npm run knot-build
 $ npm run babelw
 ```
 
