@@ -1,10 +1,10 @@
-# Steaph Thing Connector
+# Steaph Module Connector
 
 ## Requirements
 
 * Docker (Optinal)
 * Mongo v2.6.10 in :27017
-* Node.js v6.5
+* Node.js v9
 
 ## Target environemnt
 
