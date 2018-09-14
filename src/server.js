@@ -1,12 +1,7 @@
 import { DbConfig } from './app/configs/database'
 import KNoTCloud from 'knot-cloud'
 
-let argv = process.argv.slice(2)
-
-DbConfig(
-    argv.indexOf("--docker") >= 0
-    ? "mongodb://mongo/steaph"
-    : "mongodb://localhost:27017/steaph")
+DbConfig("mongodb://localhost:27017/steaph")
 
 console.log(new Date())
 
