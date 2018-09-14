@@ -10,16 +10,16 @@ DbConfig(
 
 console.log(new Date())
 
-const cloud = new KNoTCloud(
-    'knot-test.cesar.org.br',
-    3000,
-    '78159106-41ca-4022-95e8-2511695ce64c',
-    'd5265dbc4576a88f8654a8fc2c4d46a6d7b85574',
-);
+// const cloud = new KNoTCloud(
+//     '127.0.0.1',
+//     3000,
+//     '78159106-41ca-4022-95e8-2511695ce64c',
+//     'd5265dbc4576a88f8654a8fc2c4d46a6d7b85574',
+// );
 
 async function main() {
-    await cloud.connect();
-    console.log(await cloud.getDevices());
-    await cloud.close();
+    // await cloud.connect();
+    // console.log(await cloud.getDevices());
+    // await cloud.close();
 }
 main();
