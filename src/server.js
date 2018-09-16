@@ -1,5 +1,5 @@
 import { DbConfig } from './app/configs/database'
-import { ConfigureAPI, GetEnvironments, GetSchedules } from './app/helpers/http_request'
+import { ConfigureAPI, GetEnvironments, GetSchedules } from './helpers/http_request'
 import { green, cyan, red, bold } from 'colors'
 import KNoTCloud from 'knot-cloud'
 
@@ -39,7 +39,7 @@ async function Loop(delay) {
                         status = true
             })
 
-            // Add in list
+            // Add in list to be updated
             devicesStatus.push({id: env.device_id, status: status})
         })
     }
