@@ -7,6 +7,7 @@ That microservice is responsable to turn on/off the end-points according of them
 * Docker (Optinal)
 * Mongo v2.6.10 in :27017
 * Node.js v10
+* Steaph API
 
 # Usage
 
