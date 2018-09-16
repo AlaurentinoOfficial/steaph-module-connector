@@ -1,12 +1,13 @@
 import { DbConfig } from './app/configs/database'
-import { EnvironmentSchema } from './app/models/environment'
-import { EnvironmentScheduleSchema } from './app/models/environment_schedule'
+import { ConfigureAPI, GetEnvironments, GetSchedules } from './app/helpers/http_request'
 import { green, cyan, red, bold } from 'colors'
 import KNoTCloud from 'knot-cloud'
 
-DbConfig("mongodb://localhost:27017/steaph")
-
-console.log(new Date())
+ConfigureAPI({
+    host: "127.0.0.1",
+    port: "8080",
+    token: "ahdskfjwoikfadsf03i4ohrje0989uh3owefaihojn32whiaeojdsfjaosdkf"
+})
 
 const cloud = new KNoTCloud(
     '127.0.0.1',
@@ -21,8 +22,8 @@ var loopCondition = true;
 async function Loop() {
     try {
         // Query in database
-        var environments = await EnvironmentSchema.find({}).exec()
-        var schedules = await EnvironmentScheduleSchema.find({}).exec()
+        var environments = await GetEnvironments()
+        var schedules = await GetSchedules()
 
         // Reset the status
         devicesStatus = []
@@ -58,10 +59,11 @@ async function Loop() {
 }
 
 async function main() {
-    await cloud.connect();
+    console.log(green('➜  ') + bold(cyan('SERVER:')) + " Service is running!!")
+    //await cloud.connect();
 
     await Loop()
 
-    await cloud.close();
+    //await cloud.close();
 }
 main();
