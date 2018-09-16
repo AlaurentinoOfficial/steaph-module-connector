@@ -19,7 +19,7 @@ const cloud = new KNoTCloud(
 var devicesStatus = []
 
 var loopCondition = true;
-async function Loop() {
+async function Loop(delay) {
     try {
         // Query in database
         var environments = await GetEnvironments()
@@ -55,14 +55,14 @@ async function Loop() {
 
     // Create a loop
     if(loopCondition)
-        setTimeout(() => {Loop()}, 10000)
+        setTimeout(() => {Loop(delay)}, delay)
 }
 
 async function main() {
     console.log(green('➜  ') + bold(cyan('SERVER:')) + " Service is running!!")
     //await cloud.connect();
 
-    await Loop()
+    await Loop(30000)
 
     //await cloud.close();
 }
