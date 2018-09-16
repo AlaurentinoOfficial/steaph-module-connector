@@ -1,6 +1,6 @@
 # Steaph Module Connector
 
-That microservice is reponsable to turn on/off the end-points according of them schedule :D
+That microservice is responsable to turn on/off the end-points according of them schedule :D
 
 ## Requirements
 
