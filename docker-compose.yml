@@ -2,12 +2,3 @@ version: "1"
 services:
   smc:
     build: .
-    ports:
-    links:
-      - mongo
-  mongo:
-    image: mongo
-    volumes:
-      - /data/db:/data/db
-    ports:
-      - "27017:27017"
