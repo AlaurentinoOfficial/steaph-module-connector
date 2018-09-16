@@ -1,10 +1,14 @@
 # Steaph Module Connector
 
+That microservice is reponsable to turn on/off the end-points according of them schedule :D
+
 ## Requirements
 
 * Docker (Optinal)
 * Mongo v2.6.10 in :27017
-* Node.js v9
+* Node.js v10
+
+# Usage
 
 ## Target environemnt
 
@@ -15,22 +19,26 @@ $ docker-compose up --build
 
 ## Development environment
 
-* Start up MongoDB Server
+1. Intall the requirements
+```
+$ npm install
+$ npm run knot-build
+```
+
+2. Start up MongoDB Server
 ```
 $ mongod
 ```
 
-* Start up Babel listener
+3. Start up Babel listener
 ```
-$ npm install
-$ npm run knot-build
 $ npm run babelw
 ```
 
-* Start up Steaph API
+4. Start up Steaph API
 ```
 $ nodemon
 ```
 
-Developeded by Anderson Laurentino
+Developed by Anderson Laurentino
 Steaph Copyright
