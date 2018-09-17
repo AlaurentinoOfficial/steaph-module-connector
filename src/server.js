@@ -1,4 +1,3 @@
-import { DbConfig } from './app/configs/database'
 import { ConfigureAPI, GetEnvironments, GetSchedules } from './helpers/http_request'
 import { GetListDevices } from './helpers/device_status'
 import { green, cyan, bold, yellow } from 'colors'
@@ -44,8 +43,8 @@ async function Loop(delay) {
 }
 
 async function main() {
-    console.log(green('➜  ') + bold(cyan('SERVER:')) + " Service is running!!")
     await cloud.connect();
+    console.log(green('➜  ') + bold(cyan('SERVER:')) + " Service is running!!")
 
     await Loop(30000)
 
