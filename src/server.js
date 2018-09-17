@@ -11,10 +11,10 @@ ConfigureAPI({
 })
 
 const cloud = new KNoTCloud(
-    '127.0.0.1',
+    'knot-test.cesar.org.br',
     3000,
-    '99c7a764-b9a3-11e8-96f8-529269fb1459',
-    'kasjfklasdfj8ieaokdslafjdksla',
+    '78159106-41ca-4022-95e8-2511695ce64c',
+    'd5265dbc4576a88f8654a8fc2c4d46a6d7b85574',
 );
 
 var loopCondition = true;
@@ -35,7 +35,7 @@ async function Loop(delay) {
     // Send to the devices
     for(var m of devicesStatus) {
         console.log(green('➜  ') + yellow('<' + m.id + '> ') + m.status)
-        //await cloud.setData(m.id, [{ sensorId: 1, value: m.status }]);
+        await cloud.setData(m.id, [{ sensorId: 1, value: m.status }]);
     }
 
     // Create a loop
@@ -45,10 +45,10 @@ async function Loop(delay) {
 
 async function main() {
     console.log(green('➜  ') + bold(cyan('SERVER:')) + " Service is running!!")
-    //await cloud.connect();
+    await cloud.connect();
 
     await Loop(30000)
 
-    //await cloud.close();
+    await cloud.close();
 }
 main();
