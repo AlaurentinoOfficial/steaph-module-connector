@@ -1,13 +1,13 @@
-import { ConfigureAPI, GetEnvironments, GetSchedules } from './helpers/http_request'
+import { SteaphAPI } from './helpers/http_request'
 import { GetListDevices } from './helpers/device_status'
 import { green, cyan, bold, yellow } from 'colors'
 import KNoTCloud from 'knot-cloud'
 
-ConfigureAPI({
-    host: "127.0.0.1",
-    port: "8080",
-    token: "ahdskfjwoikfadsf03i4ohrje0989uh3owefaihojn32whiaeojdsfjaosdkf"
-})
+const api = new SteaphAPI(
+    "127.0.0.1",
+    "8080",
+    "ahdskfjwoikfadsf03i4ohrje0989uh3owefaihojn32whiaeojdsfjaosdkf"
+)
 
 const cloud = new KNoTCloud(
     'knot-test.cesar.org.br',
@@ -21,9 +21,9 @@ async function Loop(delay) {
     var devicesStatus = []
 
     try {
-        // Query in database
-        var environments = await GetEnvironments()
-        var schedules = await GetSchedules()
+        // Query in Steaph API
+        var environments = await api.getEnvironments()
+        var schedules = await api.getSchedules()
 
         devicesStatus = GetListDevices(environments, schedules)
     }

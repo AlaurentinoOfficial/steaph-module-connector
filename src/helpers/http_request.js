@@ -1,6 +1,22 @@
 import axios from 'axios'
 import { green, blue, bold } from 'colors'
 
+export class SteaphAPI {
+    constructor(host, port, token) {
+        this.host = host
+        this.port = port
+        this.token = token
+    }
+
+    getEnvironments() {
+        return []
+    }
+
+    getSchedules() {
+        return []
+    }
+}
+
 var config = {}
 
 exports.ConfigureAPI = (c) => {
