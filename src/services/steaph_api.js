@@ -39,7 +39,8 @@ export class SteaphHTTP {
     constructor(host, port, token) {
         this.host = host
         this.port = port
-        this.token = token
+
+        axios.defaults.headers.common['Authorization'] = `${token}`;
     }
 
     async getEnvironments() {
