@@ -38,19 +38,19 @@ async function Handler(delay) {
     // Send to the devices their status
     for(var m of devicesStatus) {
         console.log(green('➜  ') + yellow('<' + m.id + '> ') + m.status)
-        //await cloud.setData(m.id, [{ sensorId: 1, value: m.status }])
+        await cloud.setData(m.id, [{ sensorId: 1, value: m.status }])
     }
 
     // Create a loop
-    if(handlerCondition) setTimeout(() => {Handler(delay)}, delay)
+    if(handlerCondition) setTimeout(() => {await Handler(delay)}, delay)
     else {
         api.close()
-        //await cloud.close()
+        await cloud.close()
     }
 }
 
 async function main() {
-    //await cloud.connect()
+    await cloud.connect()
     console.log(green('➜  ') + bold(cyan('SERVER:')) + " Service is running!!")
 
     await Handler(30000)
