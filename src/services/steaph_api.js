@@ -63,4 +63,6 @@ export class SteaphHTTP {
             return []
         }
     }
+
+    close() {}
 }
