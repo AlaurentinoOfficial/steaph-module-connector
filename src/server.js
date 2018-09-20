@@ -1,9 +1,14 @@
-import { SteaphKafka } from './services/steaph_api'
+import { SteaphKafka, SteaphHTTP } from './services/steaph_api'
 import { GetListDevices } from './helpers/device_status'
 import { green, cyan, bold, yellow } from 'colors'
 import KNoTCloud from 'knot-cloud'
 
-const api = new SteaphKafka("http://127.0.0.1:9022")
+//const api = new SteaphKafka("http://127.0.0.1:9022")
+const api = new SteaphHTTP(
+    "127.0.0.1",
+    8080,
+    "ahdskfjwoikfadsf03i4ohrje0989uh3owefaihojn32whiaeojdsfjaosdkf"
+)
 
 const cloud = new KNoTCloud(
     'knot-test.cesar.org.br',
