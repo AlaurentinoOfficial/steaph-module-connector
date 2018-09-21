@@ -5,7 +5,7 @@
   "main": "dist/bin/www.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "http": "babel ./src/ --out-dir ./dist && node dist/server --http",
+    "kafka": "babel ./src/ --out-dir ./dist && node dist/server --kafka",
     "start": "babel ./src/ --out-dir ./dist && node dist/server.js",
     "babelw": "babel --watch ./src/ --out-dir ./dist",
     "docker": "npm run knot-build && babel ./src/ --out-dir ./dist && node dist/server.js --docker",
