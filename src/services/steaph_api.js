@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { KafkaClient, Consumer } from 'kafka-node'
-import { green, blue, bold } from 'colors'
+import { green, blue, bold, red } from 'colors'
 
 export class SteaphKafka {
     constructor(host) {
@@ -44,23 +44,25 @@ export class SteaphHTTP {
     }
 
     async getEnvironments() {
+        const url = `http://${this.host}${this.port ? ":" + this.port : ""}/local/environment`
         try {
-            const res = await axios(`http://${this.host}${this.port ? ":" + this.port : ""}/local/environment`)
+            const res = await axios(url)
             return res.data
         } 
         catch(err) {
-            console.log("Connection to API error!")
+            console.log(url + red(" Connection error!"))
             return []
         }
     }
 
     async getSchedules() {
+        const url = `http://${this.host}${this.port ? ":" + this.port : ""}/local/schedule`
         try {
-            const res = await axios(`http://${this.host}${this.port ? ":" + this.port : ""}/local/schedule`)
+            const res = await axios(url)
             return res.data
         } 
         catch(err) {
-            console.log("Connection to API error!")
+            console.log(url + red(" Connection error!"))
             return []
         }
     }

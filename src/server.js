@@ -53,6 +53,6 @@ async function main() {
     await cloud.connect()
     console.log(green('➜  ') + bold(cyan('SERVER:')) + " Service is running!!")
 
-    await Handler(30000)
+    Handler(30000)
 }
 main()
