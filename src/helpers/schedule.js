@@ -1,6 +1,3 @@
-exports.CheckSchedule = CheckSchedule
-exports.BaseDate = BaseDate
-
 exports.IndexOfByID = (list, id) => {
     for(var i = 0; i < list.length; i++) {
         if(id == list[i].id)
@@ -17,7 +14,7 @@ exports.IndexOfByID = (list, id) => {
  * @param schedules Schedules list
  * @returns Bool 
  */
-var CheckSchedule = (schedule) => {
+exports.CheckSchedule = (schedule) => {
     let now = new Date()
     return now >= BaseDate(new Date(schedule.start)) && now < BaseDate(new Date(schedule.end)) && now.getUTCDay() == schedule.day
 }
