@@ -22,8 +22,8 @@ $ docker-compose up --build
 
 1. Intall the requirements
 ```
-$ npm install
 $ npm run knot-build
+$ npm install
 ```
 
 2. Start up MongoDB Server
