@@ -8,7 +8,6 @@
     "kafka": "babel ./src/ --out-dir ./dist && node dist/server --kafka",
     "start": "babel ./src/ --out-dir ./dist && node dist/server.js",
     "babelw": "babel --watch ./src/ --out-dir ./dist",
-    "docker": "npm run knot-build && babel ./src/ --out-dir ./dist && node dist/server.js --docker",
     "knot-build": "git clone https://github.com/CESARBR/knot-lib-node && cd knot-lib-node/ && npm install && npm run build && cd .."
   },
   "keywords": [
