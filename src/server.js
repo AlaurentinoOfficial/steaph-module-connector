@@ -41,7 +41,7 @@ async function Handler(delay) {
     // Send to the devices their status
     for(var m of devicesStatus) {
         console.log(green('➜  ') + yellow('<' + m.id + '> ') + m.status)
-        //await cloud.setData(m.id, [{ sensorId: 1, value: m.status }])
+        await cloud.setData(m.id, [{ sensorId: 1, value: m.status }])
     }
 
     // Create a loop

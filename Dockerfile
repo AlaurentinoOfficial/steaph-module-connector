@@ -1,7 +1,7 @@
 FROM node:8
 
-WORKDIR /app
-COPY . /app
+WORKDIR /connector
+COPY . /connector
 RUN npm run knot-build
 RUN npm install
 
