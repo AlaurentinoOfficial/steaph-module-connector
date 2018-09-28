@@ -47,7 +47,8 @@ async function Handler(delay) {
 
 async function main() {
     await cloud.connect()
-    console.log(green('➜  ') + bold(cyan('SERVER:')) + " Service is running!!")
+    
+    console.log(green('➜  ') +  bold(cyan("CONNECTOR:")) + " Service is running!!")
 
     Handler(30000)
 }
