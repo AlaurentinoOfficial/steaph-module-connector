@@ -6,15 +6,11 @@ import KNoTCloud from 'knot-cloud'
 //=================
 //   Steaph API
 //=================
-var api;
-if(process.argv.indexOf("--kafka") != -1) {
-    api = new SteaphKafka("http://127.0.0.1:9092")
-    console.log(green('➜  ') + blue('SteaphAPI:') + " Connection established through " + underline("Kafka"))
-}
-else {
-    api = new SteaphHTTP("127.0.0.1", "8080", "ahdskfjwoikfadsf03i4ohrje0989uh3owefaihojn32whiaeojdsfjaosdkf")
-    console.log(green('➜  ') + blue('SteaphAPI:') + " Connection established through " + underline("HTTP"))
-}
+let api = new SteaphHTTP(
+    process.env.APIADDR ? process.env.APIADDR : "http://localhost:8080",
+    "ahdskfjwoikfadsf03i4ohrje0989uh3owefaihojn32whiaeojdsfjaosdkf"
+)
+console.log(green('➜  ') + blue('SteaphAPI:') + " Connection established through " + underline("HTTP"))
 //=================
 
 

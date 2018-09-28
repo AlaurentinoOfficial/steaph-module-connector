@@ -36,15 +36,14 @@ export class SteaphKafka {
 }
 
 export class SteaphHTTP {
-    constructor(host, port, token) {
-        this.host = host
-        this.port = port
+    constructor(connection, token) {
+        this.connection = connection
 
         axios.defaults.headers.common['Authorization'] = `${token}`;
     }
 
     async getEnvironments() {
-        const url = `http://${this.host}${this.port ? ":" + this.port : ""}/local/environment`
+        const url = `${this.connection}/local/environment`
         try {
             const res = await axios(url)
             return res.data
@@ -56,7 +55,7 @@ export class SteaphHTTP {
     }
 
     async getSchedules() {
-        const url = `http://${this.host}${this.port ? ":" + this.port : ""}/local/schedule`
+        const url = `http://${this.connection}/local/schedule`
         try {
             const res = await axios(url)
             return res.data
