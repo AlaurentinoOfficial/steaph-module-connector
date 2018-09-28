@@ -8,7 +8,7 @@ import KNoTCloud from 'knot-cloud'
 //=================
 var api;
 if(process.argv.indexOf("--kafka") != -1) {
-    api = new SteaphKafka("127.0.0.1:9022")
+    api = new SteaphKafka("http://127.0.0.1:9092")
     console.log(green('➜  ') + blue('SteaphAPI:') + " Connection established through " + underline("Kafka"))
 }
 else {

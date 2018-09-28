@@ -1,5 +1,5 @@
 {
-  "name": "steaph-module-connector",
+  "name": "steaph-connector-service",
   "version": "1.0.0",
   "description": "This service make a link with the cloud with the iot modules through the Knot Lib",
   "main": "dist/bin/www.js",
